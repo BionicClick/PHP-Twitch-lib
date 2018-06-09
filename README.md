@@ -33,3 +33,6 @@ https://api.twitch.tv/kraken/oauth2/authorize612?client_id=YOUR-CLIENT-ID&redire
 ```
 + After you Authorize yourself you will see in http://localhost?code=YOUR-ACCESS-TOKEN in the url bar.
 + Add your access token into the config file and your ready to go.
+
+
+If you have any questions, issues or suggestions please send a mail to danny@dkamps18.net (When the website is properly working you will be able to make suggestions and report bugs/issues there
