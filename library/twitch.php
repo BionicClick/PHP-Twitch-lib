@@ -157,22 +157,13 @@
                 return $user . ' is not following';
             }
         }
-
+        
         static function subcount($channel) {
             $request = 'channels/' . $channel . '/subscriptions';
             $data = self::call($request);
             $json = json_decode($data, true);
             $count = --$json['_total'];
             return $count;
-        }
-
-
-        // test
-        static function test($channel) {
-            $request = 'channels/' . $channel;
-            $data = self::call($request);
-            $json = json_decode($data, true);
-            return $data;
         }
     }
 ?>
