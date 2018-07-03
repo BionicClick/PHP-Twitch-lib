@@ -72,4 +72,4 @@ https://api.twitch.tv/kraken/oauth2/authorize612?client_id=YOUR-CLIENT-ID&redire
   
   
 
-If you have any questions, issues or suggestions please send a mail to danny@dkamps18.net (When the website is properly working you will be able to make suggestions and report bugs/issues there).
+If you have any questions, issues or suggestions please send a mail to danny@dkamps18.net or join the [Discord Server.](https://discord.gg/hdzHxHA) (When the website is properly working you will be able to make suggestions and report bugs/issues there).
