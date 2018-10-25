@@ -3,26 +3,26 @@
     require_once 'library/twitch.php';
 
     // get followers count
-    twitchapiv3::followers('CHANNEL');
+    twitchapibasic::followers('USERID');
 
     // get game
-    twitchapiv3::game('CHANNEL');
+    twitchapibasic::game('USERID');
 
     // get title
-    twitchapiv3::title('CHANNEL');
+    twitchapibasic::title('USERID');
 
-    // get total channel views
-    twitchapiv3::channelviews('CHANNEL');
+    // get total USERID views
+    twitchapibasic::USERIDviews('USERID');
 
     // get current viewers 
-    twitchapiv3::viewers('CHANNEL');
+    twitchapibasic::viewers('USERID');
 
     // get uptime
-    twitchapiv3::uptime('CHANNEL');
+    twitchapibasic::uptime('USERID');
 
     // get followage
-    twitchapiv3::followage('CHANNEL', 'FOLLOWER');
+    twitchapibasic::followage('USERID', 'FOLLOWER');
 
     // get subcount
-    twitchapiv3::subcount('CHANNEL');
+    twitchapibasic::subcount('USERID');
 ?>

@@ -3,7 +3,7 @@
 
   
 
-### Please Note That This library in its current state will only work until 31-Dec-2018. This library will be updated to the new api later this year so keep checking this Repository so that your up-to-date
+### Advanced mode is still being developed more features comming soon. also v1.0 is comming up PogChamp
 
   
 
@@ -15,7 +15,7 @@ To get this to work you need to add the following lines to your php file
 
 include  'path/to/config.php';
 
-require_once  'path//twitch.php';
+require_once  'path/to/twitchbasic.php/or/twitch.php';
 
 ```
 
