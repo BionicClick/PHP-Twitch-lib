@@ -17,27 +17,27 @@ The Documentation has been moved to the wiki. You can find the getting started p
 
 Current supported endpoints:
 
-V5:
-&nbsp; :x: Bits
-&nbsp; :heavy_check_mark: Channels
-&nbsp; :x: Chat
-&nbsp; :x: Clips
-&nbsp; :x: Collections
-&nbsp; :x: Games
-&nbsp; :x: Ingests
-&nbsp; :x: Search
-&nbsp; :x: Streams
-&nbsp; :x: Teams
-&nbsp; :x: Users
-&nbsp; :x: Videos
+V5:  
+&nbsp; :x: Bits  
+&nbsp; :heavy_check_mark: Channels  
+&nbsp; :x: Chat  
+&nbsp; :x: Clips  
+&nbsp; :x: Collections  
+&nbsp; :x: Games  
+&nbsp; :x: Ingests  
+&nbsp; :x: Search  
+&nbsp; :x: Streams  
+&nbsp; :x: Teams  
+&nbsp; :x: Users  
+&nbsp; :x: Videos  
  
-Helix:
-&nbsp; :x: Analytics
-&nbsp; :x: Bits
-&nbsp; :x: Clips
-&nbsp; :x: Entitlements
-&nbsp; :x: Games
-&nbsp; :x: Streams
-&nbsp; :x: Users
-&nbsp; :x: Videos
-&nbsp; :x: Webhooks
+Helix:  
+&nbsp; :x: Analytics  
+&nbsp; :x: Bits  
+&nbsp; :x: Clips  
+&nbsp; :x: Entitlements  
+&nbsp; :x: Games  
+&nbsp; :x: Streams  
+&nbsp; :x: Users  
+&nbsp; :x: Videos  
+&nbsp; :x: Webhooks  
