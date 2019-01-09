@@ -41,3 +41,9 @@ Helix:
 &nbsp; :x: Users  
 &nbsp; :x: Videos  
 &nbsp; :x: Webhooks  
+
+Get support  
+[Documentation.](https://github.com/Dkamps18/PHP-Twitch-lib/wiki) 
+[Official Discord Server.](https://discord.gg/hdzHxHA)  
+[Twitch API Discord Server.](https://discord.gg/QrPznX3)  
+When the website is properly working you will be able to make suggestions and report bugs/issues there.
