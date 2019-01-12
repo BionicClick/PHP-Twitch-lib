@@ -114,7 +114,7 @@
         static function clips_followed($l = '10', $t = 'false', $o = '') {
             $data = self::oldcall('clips/followed?limit='. $l . '&trending='. $t . '&cursor=' . $o);
             $json = json_decode($data, true);
-            return $data;
+            return $json;
         }
     }
 ?>
