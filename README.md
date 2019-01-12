@@ -13,18 +13,18 @@ The Documentation has been moved to the wiki. You can find the getting started p
 Current supported endpoints:
 
 V5:  
-&nbsp; :x: Bits  
+&nbsp; :heavy_check_mark: Bits  
 &nbsp; :heavy_check_mark: Channels  
 &nbsp; :heavy_check_mark: Chat  
 &nbsp; :heavy_check_mark: Clips  
-&nbsp; :x: Collections  
-&nbsp; :x: Games  
-&nbsp; :x: Ingests  
-&nbsp; :x: Search  
-&nbsp; :x: Streams  
-&nbsp; :x: Teams  
-&nbsp; :x: Users  
-&nbsp; :x: Videos  
+&nbsp; :heavy_check_mark: Collections  
+&nbsp; :heavy_check_mark: Games  
+&nbsp; :heavy_check_mark: Ingests  
+&nbsp; :heavy_check_mark: Search  
+&nbsp; :heavy_check_mark: Streams  
+&nbsp; :heavy_check_mark: Teams  
+&nbsp; :heavy_check_mark: Users  
+&nbsp; :heavy_check_mark: Videos  
  
 Helix:  
 &nbsp; :x: Analytics  
@@ -36,6 +36,8 @@ Helix:
 &nbsp; :x: Users  
 &nbsp; :x: Videos  
 &nbsp; :x: Webhooks  
+  
+**note:** only the GET endpoints are supported
   
 Get support  
 [Documentation.](https://github.com/Dkamps18/PHP-Twitch-lib/wiki) 
