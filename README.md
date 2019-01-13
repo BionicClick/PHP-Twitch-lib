@@ -28,11 +28,11 @@ V5:
  
 Helix:  
 &nbsp; :x: Analytics  
-&nbsp; :x: Bits  
-&nbsp; :x: Clips  
+&nbsp; :heavy_check_mark: Bits  
+&nbsp; :heavy_check_mark: Clips  
 &nbsp; :x: Entitlements  
-&nbsp; :x: Games  
-&nbsp; :x: Streams  
+&nbsp; :heavy_check_mark: Games  
+&nbsp; :heavy_check_mark: Streams  
 &nbsp; :x: Users  
 &nbsp; :x: Videos  
 &nbsp; :x: Webhooks  

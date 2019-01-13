@@ -298,4 +298,213 @@
             return $json;
         }
     }
+
+    class twitchapihelix {
+
+        static function call($request) {
+            $url = 'https://api.twitch.tv/helix/'. $request;
+            $ch = curl_init();
+            curl_setopt_array($ch, array(
+            CURLOPT_HTTPHEADER => array(
+                'Client-ID: ' . $GLOBALS['config']['Twitch_Client-id'] . '',
+                'Authorization: Bearer ' . $GLOBALS['config']['Twitch_Access-token'] . '',
+            ),
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_URL => $url
+            ));
+
+            $response = curl_exec($ch);
+            curl_close($ch);
+            return $response;
+        }
+
+        static function bits_leaderboard($c = 10, $p = 'all', $sa = null, $u = null) {
+            if(isset($sa)) {
+                $ssa = '&started_at=' . $sa;
+            }
+            if(isset($u)) {
+                $su = '&user_id='. $u;
+            }
+            $data = self::call('bits/leaderboard?count'. $c .'&period='. $p . $ssa . $su);
+            $json = json_decode($data, true);
+            return $json;
+        }
+
+        static function clips_id($id) {
+            $data = self::call('clips/?id='. $id);
+            $json = json_decode($data, true);
+            return $json;
+        }
+
+        static function clips_broadcaster($id, $f = 20, $sa = null, $ea = null, $a = null, $b = null) {
+            if(isset($sa)) {
+                $ssa = '&started_at=' . $sa;
+            }
+            if(isset($ea)) {
+                $sea = '&ended_at=' . $ea;
+            }
+            if(isset($a)) {
+                $sa = '&after=' . $a;
+            }
+            if(isset($b)) {
+                $sb = '&before=' . $b;
+            }
+            $data = self::call('clips?broadcaster_id='. $id .'&first='. $f . $ssa . $ea . $a . $b);
+            $json = json_decode($data, true);
+            return $json;
+        }
+
+        static function clips_game_id($id, $f = 20, $sa = null, $ea = null, $a = null, $b = null) {
+            if(isset($sa)) {
+                $ssa = '&started_at=' . $sa;
+            }
+            if(isset($ea)) {
+                $sea = '&ended_at=' . $ea;
+            }
+            if(isset($a)) {
+                $sa = '&after=' . $a;
+            }
+            if(isset($b)) {
+                $sb = '&before=' . $b;
+            }
+            $data = self::call('clips?game_id='. $id .'&first='. $f . $ssa . $ea . $a . $b);
+            $json = json_decode($data, true);
+            return $json;
+        }
+
+        static function games_top($f = 20, $a = null, $b = null) {
+            if(isset($a)) {
+                $sa = '&after=' . $a;
+            }
+            if(isset($b)) {
+                $sb = '&before=' . $b;
+            }
+            $data = self::call('games/top?first='. $f . $a . $b);
+            $json = json_decode($data, true);
+            return $json;
+        }
+
+        static function games_id($id) {
+            $data = self::call('games?id='. $id);
+            $json = json_decode($data, true);
+            return $json;
+        }
+
+        static function games_name($n) {
+            $data = self::call('games?name='. $n);
+            $json = json_decode($data, true);
+            return $json;
+        }
+
+        static function streams($f = 20, $a = null, $b = null, $l = null) {
+            $data = self::call('streams?first='. $f . $sa . $sb . $sl);
+            $json = json_decode($data, true);
+            return $data;
+        }
+
+        static function streams_game($id, $f = 20, $a = null, $b = null, $l = null) {
+            if(isset($a)) {
+                $sa = '&after=' . $a;
+            }
+            if(isset($b)) {
+                $sb = '&before=' . $b;
+            }
+            if(isset($l)) {
+                $sl = '&language=' . $l;
+            }
+
+            $data = self::call('streams?game_id='. $id . '&first='. $f . $sa . $sb . $sl );
+            $json = json_decode($data, true);
+            return $data;
+        }
+
+        static function streams_user($t, $u, $a = null, $b = null, $l = null) {
+            if($t == 'id') {
+                $su = '?user_id='. $u;
+            }
+            if($t = 'login') {
+                $su = '?user_login='. $u;
+            }
+            if(isset($a)) {
+                $sa = '&after=' . $a;
+            }
+            if(isset($b)) {
+                $sb = '&before=' . $b;
+            }
+            if(isset($l)) {
+                $sl = '&language=' . $l;
+            }
+
+            $data = self::call('streams'. $su . $sa . $sb . $sl );
+            $json = json_decode($data, true);
+            return $data;
+        }
+        
+        static function streams_metadata($f = 20, $a = null, $b = null, $l = null) {
+            $data = self::call('streams/metadata?first='. $f . $sa . $sb . $sl);
+            $json = json_decode($data, true);
+            return $data;
+        }
+
+        static function streams_metadata_game($id, $f = 20, $a = null, $b = null, $l = null) {
+            if(isset($a)) {
+                $sa = '&after=' . $a;
+            }
+            if(isset($b)) {
+                $sb = '&before=' . $b;
+            }
+            if(isset($l)) {
+                $sl = '&language=' . $l;
+            }
+
+            $data = self::call('streams/metadata?game_id='. $id . '&first='. $f . $sa . $sb . $sl );
+            $json = json_decode($data, true);
+            return $data;
+        }
+
+        static function streams_metadata_user($t, $u, $a = null, $b = null, $l = null) {
+            if($t == 'id') {
+                $su = '?user_id='. $u;
+            }
+            if($t == 'login') {
+                $su = '?user_login='. $u;
+            }
+            if(isset($a)) {
+                $sa = '&after=' . $a;
+            }
+            if(isset($b)) {
+                $sb = '&before=' . $b;
+            }
+            if(isset($l)) {
+                $sl = '&language=' . $l;
+            }
+
+            $data = self::call('streams/metadata'. $su . $sa . $sb . $sl );
+            $json = json_decode($data, true);
+            return $data;
+        }
+
+        static function streams_markers($t, $id, $f = 20, $a = null, $b = null) {
+            if($t == 'user') {
+                $sid = '?user_id='. $id;
+            }
+            if($t == 'video') {
+                $sid = '?video_id='. $id;
+            }
+            if(isset($a)) {
+                $sa = '&after=' . $a;
+            }
+            if(isset($b)) {
+                $sb = '&before=' . $b;
+            }
+            if(isset($l)) {
+                $sl = '&language=' . $l;
+            }
+
+            $data = self::call('streams/markers'. $sid .'&first='. $f . $sa . $sb . $sl);
+            $json = json_decode($data, true);
+            return $data;
+        }
+        
+    }
 ?>
