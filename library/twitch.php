@@ -399,7 +399,7 @@
         static function streams($f = 20, $a = null, $b = null, $l = null) {
             $data = self::call('streams?first='. $f . $sa . $sb . $sl);
             $json = json_decode($data, true);
-            return $data;
+            return $json;
         }
 
         static function streams_game($id, $f = 20, $a = null, $b = null, $l = null) {
@@ -415,7 +415,7 @@
 
             $data = self::call('streams?game_id='. $id . '&first='. $f . $sa . $sb . $sl );
             $json = json_decode($data, true);
-            return $data;
+            return $json;
         }
 
         static function streams_user($t, $u, $a = null, $b = null, $l = null) {
@@ -437,13 +437,13 @@
 
             $data = self::call('streams'. $su . $sa . $sb . $sl );
             $json = json_decode($data, true);
-            return $data;
+            return $json;
         }
         
         static function streams_metadata($f = 20, $a = null, $b = null, $l = null) {
             $data = self::call('streams/metadata?first='. $f . $sa . $sb . $sl);
             $json = json_decode($data, true);
-            return $data;
+            return $json;
         }
 
         static function streams_metadata_game($id, $f = 20, $a = null, $b = null, $l = null) {
@@ -459,7 +459,7 @@
 
             $data = self::call('streams/metadata?game_id='. $id . '&first='. $f . $sa . $sb . $sl );
             $json = json_decode($data, true);
-            return $data;
+            return $json;
         }
 
         static function streams_metadata_user($t, $u, $a = null, $b = null, $l = null) {
@@ -481,7 +481,7 @@
 
             $data = self::call('streams/metadata'. $su . $sa . $sb . $sl );
             $json = json_decode($data, true);
-            return $data;
+            return $json;
         }
 
         static function streams_markers($t, $id, $f = 20, $a = null, $b = null) {
@@ -503,8 +503,81 @@
 
             $data = self::call('streams/markers'. $sid .'&first='. $f . $sa . $sb . $sl);
             $json = json_decode($data, true);
-            return $data;
+            return $json;
         }
+
+        static function users($t, $id) {
+            if($t == 'id') {
+                $sid = '?id='. $id;
+            }
+            if($t == 'login') {
+                $sid = '?login='. $id;
+            }
+
+            $data = self::call('users'. $sid);
+            $json = json_decode($data, true);
+            return $json;
+        }
+
+        static function users_follows($f, $t= null, $l = 20, $a = null) {
+            if(isset($t)) {
+                $st = '&to_id='. $t;
+            }
+            if(isset($a)) {
+                $sa = '&after=' . $a;
+            }
+
+            $data = self::call('users/follows?from_id='. $f . $st . '&first=' . $l . $sa);
+            $json = json_decode($data, true);
+            return $json;
+        }
+
+        static function users_extensions($u = null) {
+            if(isset($u)) {
+                $su = '?user_id='. $u;
+            }
+            $data = self::call('users/extensions'. $su);
+            $json = json_decode($data, true);
+            return $json;
+        }
+
+        static function users_extensions_list() {
+            $data = self::call('users/extensions/list');
+            $json = json_decode($data, true);
+            return $json;
+        }
+
+        static function videos($rt, $id, $p = 'all', $s = 'time', $t = 'all', $a = null, $b = null, $f = 20, $l = null) {
+            if($rt == 'video') {
+                $sid = '?id='. $id;
+            }
+            if($rt == 'user') {
+                $sid = '?user_id='. $id;
+            }
+            if($rt == 'game') {
+                $sid = '?game_id='. $id;
+            }
+            if(isset($b)) {
+                $sb = '&before=' . $b;
+            }
+            if(isset($l)) {
+                $sl = '&language=' . $l;
+            }
+            $data = self::call('videos'. $sid .'&first='. $f .'&period='. $p . '&sort='. $s .'&type='. $t . $sa . $sb . $sl);
+            $json = json_decode($data, true);
+            return $json;
+        }
+
+        static function webhooks_subscriptions($f = 20, $a = null) {
+            if(isset($a)) {
+                $sa = '&after=' . $a;
+            }
+            $data = self::call('webhooks/subscriptions?first='. $f . $as);
+            $json = json_decode($data, true);
+            return $json;
+        }
+
+        
         
     }
 ?>

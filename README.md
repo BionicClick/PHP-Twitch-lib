@@ -33,9 +33,9 @@ Helix:
 &nbsp; :x: Entitlements  
 &nbsp; :heavy_check_mark: Games  
 &nbsp; :heavy_check_mark: Streams  
-&nbsp; :x: Users  
-&nbsp; :x: Videos  
-&nbsp; :x: Webhooks  
+&nbsp; :heavy_check_mark: Users  
+&nbsp; :heavy_check_mark: Videos  
+&nbsp; :heavy_check_mark: Webhooks  
   
 **note:** only the GET endpoints are supported
   
