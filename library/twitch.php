@@ -21,20 +21,20 @@
 
         static function bits_cheermotes($c = null) {
             if(isset($c)) {
-                $sc = '?channel_id='. $c;
+                $sc = '?channels_id='. $c;
             }
             $data = self::call('bits/actions'. $sc);
             $json = json_decode($data, true);
             return $json;
         }
 
-        static function channel($c) {
+        static function channels($c) {
             $data = self::call('channels/'. $c);
             $json = json_decode($data, true);
             return $json;
         }
 
-        static function channel_collections($c, $l = 10, $o = '', $ci = null) {
+        static function channels_collections($c, $l = 10, $o = '', $ci = null) {
             if(isset($ci)) {
                 $cr = '&containing_item='. $ci;
             }
@@ -43,37 +43,37 @@
             return $json;
         }
 
-        static function channel_editors($c) {
+        static function channels_editors($c) {
             $data = self::call('channels/'. $c . '/editors');
             $json = json_decode($data, true);
             return $json;
         }
 
-        static function channel_followers($c, $l = '25', $o = '0', $d = 'desc') {
+        static function channels_followers($c, $l = '25', $o = '0', $d = 'desc') {
             $data = self::call('channels/'. $c . '/follows?limit='. $l .'&offset='. $o .'&direction=' . $d);
             $json = json_decode($data, true);
             return $json;
         }
 
-        static function channel_teams($c) {
+        static function channels_teams($c) {
             $data = self::call('channels/'. $c . '/teams');
             $json = json_decode($data, true);
             return $json;
         }
 
-        static function channel_subscriptions($c, $l = '25', $o = '0', $d = 'desc') {
+        static function channels_subscriptions($c, $l = '25', $o = '0', $d = 'desc') {
             $data = self::call('channels/'. $c . '/subscriptions?limit='. $l .'&offset='. $o .'&direction=' . $d);
             $json = json_decode($data, true);
             return $json;
         }
 
-        static function channel_check_subscription($c, $s) {
+        static function channels_check_subscription($c, $s) {
             $data = self::call('channels/'. $c . '/subscriptions/'.$s);
             $json = json_decode($data, true);
             return $json;
         }
 
-        static function channel_videos($c, $l = '25', $o = '0', $bt = '', $lg = '', $s = 'time') {
+        static function channels_videos($c, $l = '25', $o = '0', $bt = '', $lg = '', $s = 'time') {
             $data = self::call('channels/'. $c . '/videos?limit='.$l . '&offset=' . $o . '&broadcast_type=' . $bt . '&language=' . $lg . '&sort=' . $s);
             $json = json_decode($data, true);
             return $json;
