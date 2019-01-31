@@ -33,14 +33,15 @@ Helix:
 &nbsp; :x: Entitlements  
 &nbsp; :heavy_check_mark: Games  
 &nbsp; :heavy_check_mark: Streams  
+&nbsp; :x: Tags  
 &nbsp; :heavy_check_mark: Users  
 &nbsp; :heavy_check_mark: Videos  
 &nbsp; :heavy_check_mark: Webhooks  
-  
-**note:** only the GET endpoints are supported
+
+**note:** only the GET endpoints are supported, PUT and DELETE are comming soon.
   
 Get support  
-[Documentation.](https://github.com/Dkamps18/PHP-Twitch-lib/wiki) 
+[Documentation.](https://github.com/Dkamps18/PHP-Twitch-lib/wiki)  
 [Official Discord Server.](https://discord.gg/hdzHxHA)  
 [Twitch API Discord Server.](https://discord.gg/QrPznX3)  
 When the website is properly working you will be able to make suggestions and report bugs/issues there.
