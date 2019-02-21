@@ -184,8 +184,11 @@
             return $json;
         }
 
-        static function streams_summary() {
-            $data = self::call('streams/summary');
+        static function streams_summary($g = null) {
+            if(isset($g)) {
+                $sg = '?game=' . $g;
+            }
+            $data = self::call('streams/summary'. $sg);
             $json = json_decode($data, true);
             return $json;
         }
