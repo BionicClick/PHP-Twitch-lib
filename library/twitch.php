@@ -124,8 +124,11 @@
             return $json;
         }
 
-        static function collections_items($c) {
-            $data = self::call('collections/'. $c . '/items');
+        static function collections_items($c, $i = null) {
+            if(isset($i)) {
+                $si = '?include_all_items=' . $i;
+            }
+            $data = self::call('collections/'. $c . '/items'. $si);
             $json = json_decode($data, true);
             return $json;
         }
