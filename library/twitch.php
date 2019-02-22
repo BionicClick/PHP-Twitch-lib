@@ -331,7 +331,7 @@
             if(isset($u)) {
                 $su = '&user_id='. $u;
             }
-            $data = self::call('bits/leaderboard?count'. $c .'&period='. $p . $ssa . $su);
+            $data = self::call('bits/leaderboard?count='. $c .'&period='. $p . $ssa . $su);
             $json = json_decode($data, true);
             return $json;
         }
