@@ -403,6 +403,15 @@
         }
 
         static function streams($f = 20, $a = null, $b = null, $l = null) {
+            if(isset($a)) {
+                $sa = '&after=' . $a;
+            }
+            if(isset($b)) {
+                $sb = '&before=' . $b;
+            }
+            if(isset($l)) {
+                $sl = '&language=' . $l;
+            }
             $data = self::call('streams?first='. $f . $sa . $sb . $sl);
             $json = json_decode($data, true);
             return $json;
