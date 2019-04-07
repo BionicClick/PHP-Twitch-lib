@@ -186,7 +186,7 @@
 
         static function streams_summary($g = null) {
             if(isset($g)) {
-                $sg = '?game=' . $g;
+                $sg = '?game=' . urlencode($g);
             }
             $data = self::call('streams/summary'. $sg);
             $json = json_decode($data, true);
