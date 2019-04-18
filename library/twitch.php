@@ -534,15 +534,21 @@
             return $json;
         }
 
-        static function users_follows($f, $t= null, $l = 20, $a = null) {
-            if(isset($t)) {
-                $st = '&to_id='. $t;
+        static function users_follows($t, $id1, $id2 = null, $l = 20, $a = null) {
+            if($t == 'following') {
+                $sid = '?from_id='. $id1;
+            }
+            if($t == 'followers') {
+                $sid = '?to_id='. $id1;
+            }
+            if($t == 'followcheck') {
+                $sid = '?from_id='. $id1 .'&to_id='. $id2;
             }
             if(isset($a)) {
                 $sa = '&after=' . $a;
             }
 
-            $data = self::call('users/follows?from_id='. $f . $st . '&first=' . $l . $sa);
+            $data = self::call('users/follows'. $sid . '&first=' . $l . $sa);
             $json = json_decode($data, true);
             return $json;
         }
